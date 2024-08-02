@@ -46,4 +46,8 @@
 //        "./src/**/*.ts",
 //        "./src/**/*.tsx",
 //    ]
+    "include": [
+        "./config/jest/setupTests.ts",
+        "src"
+    ]
 }
