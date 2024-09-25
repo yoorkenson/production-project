@@ -3,9 +3,9 @@
 
 # обычно тут запускать только линтеры, тошо все остальное долго
 
-npm run build:prod
+# npm run build:prod
 npm run lint:ts
 npm run lint:scss
-npm run test:unit
-npm run storybook:build
-npm run test:ui
+# npm run test:unit
+# npm run storybook:build
+# npm run test:ui
