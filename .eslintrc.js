@@ -33,7 +33,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
-        'no-param-reassign': [2, { props: false }],
+        'no-param-reassign': 'off',
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
