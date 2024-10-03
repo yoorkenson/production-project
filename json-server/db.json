@@ -17,6 +17,13 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "first": "Имя",
+        "lastname": "Фамилия",
+        "age": 25,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Moscow",
+        "username": "admin",
+        "avatar": "https://gotoparty.ru/public/img/upload/page/1231/2091608443221afd2c9db30f255c563a_200x200.jpg"
     }
 }
