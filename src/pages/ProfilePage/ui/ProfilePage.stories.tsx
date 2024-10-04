@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import ProfilePage from './ProfilePage';
 
 const meta = {
@@ -24,7 +26,19 @@ export const Normal: Story = {
     args: {
     },
     decorators: [
-        StoreDecorator({}),
+        StoreDecorator({
+            profile: {
+                form: {
+                    username: 'admin',
+                    age: 20,
+                    country: Country.Ukraine,
+                    lastname: 'фамилия',
+                    first: 'имя',
+                    city: 'город',
+                    currency: Currency.EUR,
+                },
+            },
+        }),
     ],
 };
 
@@ -33,6 +47,18 @@ export const Dark: Story = {
     },
     decorators: [
         ThemeDecorator(Theme.DARK),
-        StoreDecorator({}),
+        StoreDecorator({
+            profile: {
+                form: {
+                    username: 'admin',
+                    age: 20,
+                    country: Country.Ukraine,
+                    lastname: 'фамилия',
+                    first: 'имя',
+                    city: 'город',
+                    currency: Currency.EUR,
+                },
+            },
+        }),
     ],
 };
