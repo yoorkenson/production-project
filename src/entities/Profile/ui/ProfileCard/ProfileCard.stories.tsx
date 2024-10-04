@@ -31,7 +31,8 @@ export const Primary: Story = {
             first: 'имя',
             city: 'город',
             currency: Currency.EUR,
-            avatar,
+            // avatar,
+            avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
         },
     },
     decorators: [
