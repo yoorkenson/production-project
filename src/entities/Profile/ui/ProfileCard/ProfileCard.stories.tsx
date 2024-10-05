@@ -32,7 +32,7 @@ export const Primary: Story = {
             city: 'город',
             currency: Currency.EUR,
             // avatar,
-            avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+            avatar: 'https://gotoparty.ru/public/img/upload/page/1231/2091608443221afd2c9db30f255c563a_200x200.jpg',
         },
     },
     decorators: [
