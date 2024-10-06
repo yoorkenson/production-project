@@ -14,6 +14,8 @@ const data = {
     currency: Currency.EUR,
 };
 
+const voidfn = () => {};
+
 describe('profileSlice.test', () => {
     test('test setUsername', () => {
         const state: DeepPartial<ProfileSchema> = { readonly: false };
@@ -73,6 +75,19 @@ describe('profileSlice.test', () => {
             readonly: true,
             form: data,
             data,
+        });
+    });
+
+    test('test updateProfile service rejected', () => {
+        const state: DeepPartial<ProfileSchema> = {
+            isLoading: true,
+        };
+        expect(profileReducer(
+            state as ProfileSchema,
+            updateProfileData.rejected(new Error(), '', voidfn(), [ValidateProfileError.SERVER_ERROR]),
+        )).toEqual({
+            isLoading: false,
+            validateErrors: [ValidateProfileError.SERVER_ERROR],
         });
     });
 });
