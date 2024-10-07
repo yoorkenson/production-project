@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "какой-то текст",
+      "id": "gR6iH5A"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "другой текст",
+      "id": "ixtGW6c"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "тестим",
+      "id": "dP2ycJW"
     }
   ],
   "users": [
@@ -118,14 +138,28 @@
       "avatar": "https://images.genius.com/56b71ea5157ecd936adcd59a0c409920.1000x1000x1.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "2",
+      "first": "клаб",
+      "lastname": "локед",
+      "age": 111,
+      "currency": "USD",
+      "country": "Urkaine",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://images.genius.com/56b71ea5157ecd936adcd59a0c409920.1000x1000x1.jpg"
+    }
+  ]
 }

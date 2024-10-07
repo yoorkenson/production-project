@@ -1,10 +1,11 @@
 import {
+    Profile,
     profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
 } from 'entities/Profile';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 
-const data = {
+const data: Profile = {
     username: 'admin',
     age: 20,
     country: Country.Ukraine,
@@ -14,7 +15,7 @@ const data = {
     currency: Currency.EUR,
 };
 
-const voidfn = () => {};
+const voidFn = () => {};
 
 describe('profileSlice.test', () => {
     test('test setUsername', () => {
@@ -84,7 +85,7 @@ describe('profileSlice.test', () => {
         };
         expect(profileReducer(
             state as ProfileSchema,
-            updateProfileData.rejected(new Error(), '', voidfn(), [ValidateProfileError.SERVER_ERROR]),
+            updateProfileData.rejected(new Error(), '', voidFn(), [ValidateProfileError.SERVER_ERROR]),
         )).toEqual({
             isLoading: false,
             validateErrors: [ValidateProfileError.SERVER_ERROR],

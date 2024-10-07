@@ -1,22 +1,22 @@
-import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { fetchProfileData } from './fetchProfileData';
+import { Comment } from 'entities/Comment';
+import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
 
-const data = {
-    username: 'admin',
-    age: 20,
-    country: Country.Ukraine,
-    lastname: 'фамилия',
-    first: 'имя',
-    city: 'город',
-    currency: Currency.EUR,
-};
+const data: Comment[] = [
+    {
+        id: '1',
+        user: {
+            id: '1',
+            avatar: '',
+            username: 'user',
+        },
+        text: 'text',
+    },
+];
 
-describe('loginByUsername.test', () => {
+describe('fetchCommentsByArticleId.test', () => {
     test('success', async () => {
-        const thunk = new TestAsyncThunk(fetchProfileData);
+        const thunk = new TestAsyncThunk(fetchCommentsByArticleId);
         thunk.api.get.mockReturnValue(Promise.resolve({ data }));
 
         const result = await thunk.callThunk('1');
@@ -27,7 +27,7 @@ describe('loginByUsername.test', () => {
     });
 
     test('error', async () => {
-        const thunk = new TestAsyncThunk(fetchProfileData);
+        const thunk = new TestAsyncThunk(fetchCommentsByArticleId);
         thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk('1');
 
