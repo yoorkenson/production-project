@@ -1,38 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article';
-import { ArticleDetails } from './ArticleDetails';
+import { Article, ArticleView } from 'entities/Article';
+import { ArticleList } from './ArticleList';
 
-const meta = {
-    title: 'entities/ArticleDetails',
-    component: ArticleDetails,
-    parameters: {
-        layout: 'fullscreen',
-    },
-    tags: ['autodocs'],
-    argTypes: {},
-    args: {},
-} satisfies Meta<typeof ArticleDetails>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-const article: Article = {
+const article = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    type: [ArticleType.IT],
     user: {
         id: '1',
         username: 'user name',
+        avatar: 'https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj',
     },
+    type: [
+        'IT',
+    ],
     blocks: [
         {
             id: '1',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -42,12 +30,12 @@ const article: Article = {
         },
         {
             id: '4',
-            type: ArticleBlockType.CODE,
+            type: 'CODE',
             code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
         },
         {
             id: '5',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -56,18 +44,18 @@ const article: Article = {
         },
         {
             id: '2',
-            type: ArticleBlockType.IMAGE,
+            type: 'IMAGE',
             src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
             title: 'Рисунок 1 - скриншот сайта',
         },
         {
             id: '3',
-            type: ArticleBlockType.CODE,
+            type: 'CODE',
             code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '7',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
@@ -76,56 +64,75 @@ const article: Article = {
         },
         {
             id: '8',
-            type: ArticleBlockType.IMAGE,
+            type: 'IMAGE',
             src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
             title: 'Рисунок 1 - скриншот сайта',
         },
         {
             id: '9',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
             ],
         },
     ],
+} as Article;
+
+const meta = {
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
+    parameters: {
+        layout: 'fullscreen',
+    },
+    tags: ['autodocs'],
+    argTypes: {},
+    args: {},
+} satisfies Meta<typeof ArticleList>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const isLoadingBig: Story = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.BIG,
+    },
 };
 
-export const Normal: Story = {
+export const isLoadingSmall: Story = {
     args: {
-        id: '',
+        isLoading: true,
+        articles: [],
+        view: ArticleView.SMALL,
     },
-    decorators: [
-        StoreDecorator({
-            articleDetails: {
-                data: article,
-            },
-        }),
-    ],
 };
 
-export const Loading: Story = {
+export const ListBig: Story = {
     args: {
-        id: '',
+        isLoading: false,
+        articles:
+            new Array(3)
+                .fill(0)
+                .map((item, index) => ({
+                    ...article,
+                    id: String(index),
+                })),
+        view: ArticleView.BIG,
     },
-    decorators: [
-        StoreDecorator({
-            articleDetails: {
-                isLoading: true,
-            },
-        }),
-    ],
 };
 
-export const Error: Story = {
+export const ListSmall: Story = {
     args: {
-        id: '',
+        isLoading: false,
+        articles:
+            new Array(9)
+                .fill(0)
+                .map((item, index) => ({
+                    ...article,
+                    id: String(index),
+                })),
+        view: ArticleView.SMALL,
     },
-    decorators: [
-        StoreDecorator({
-            articleDetails: {
-                error: 'error',
-            },
-        }),
-    ],
 };

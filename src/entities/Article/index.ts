@@ -3,6 +3,7 @@ export { ArticleImageBlockComponentProps } from './ui/ArticleImageBlockComponent
 export { ArticleTextBlockComponentProps } from './ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 export {
     Article,
+    ArticleView,
     ArticleBLock,
     ArticleBlockType,
     ArticleBlockBase,
@@ -16,3 +17,4 @@ export {
 } from './ui/ArticleDetails/ArticleDetails';
 
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
+export { ArticleList } from './ui/ArticleList/ArticleList';

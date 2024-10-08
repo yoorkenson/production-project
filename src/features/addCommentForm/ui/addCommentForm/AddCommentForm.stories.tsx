@@ -3,7 +3,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import AddCommentForm from './AddCommentForm';
 
 const meta = {
-    title: '_CHOOSE_/addCommentForm',
+    title: 'features/addCommentForm',
     component: AddCommentForm,
     parameters: {
         layout: 'fullscreen',
