@@ -1,23 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleView } from 'entities/Article';
-import { ArticleViewSelector } from './ArticleViewSelector';
+import { Page } from './Page';
 
 const meta = {
-    title: 'entity/Article/ArticleViewSelector',
-    component: ArticleViewSelector,
+    title: '_CHOOSE_/Page',
+    component: Page,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {},
-} satisfies Meta<typeof ArticleViewSelector>;
+} satisfies Meta<typeof Page>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
-        view: ArticleView.BIG,
+        children: '',
     },
 };

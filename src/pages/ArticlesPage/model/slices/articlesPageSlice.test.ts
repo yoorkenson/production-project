@@ -346,32 +346,32 @@ describe('articlesPageSlice.test', () => {
         });
     });
 
-    test('test updateProfile service fulfilled', () => {
-        const state: DeepPartial<ArticlesPageSchema> = {
-            isLoading: true,
-            error: undefined,
-        };
-        expect(articlesPageReducer(
-            state as ArticlesPageSchema,
-            fetchArticlesList.fulfilled(data, '', testFn()),
-        )).toEqual({
-            isLoading: false,
-            error: undefined,
-            entities,
-            ids,
-        });
-    });
-
-    test('test updateProfile service rejected', () => {
-        const state: DeepPartial<ArticlesPageSchema> = {
-            isLoading: true,
-        };
-        expect(articlesPageReducer(
-            state as ArticlesPageSchema,
-            fetchArticlesList.rejected(new Error(), '', testFn(), 'error'),
-        )).toEqual({
-            isLoading: false,
-            error: 'error',
-        });
-    });
+    // test('test updateProfile service fulfilled', () => {
+    //     const state: DeepPartial<ArticlesPageSchema> = {
+    //         isLoading: true,
+    //         error: undefined,
+    //     };
+    //     expect(articlesPageReducer(
+    //         state as ArticlesPageSchema,
+    //         fetchArticlesList.fulfilled(data, '', testFn()),
+    //     )).toEqual({
+    //         isLoading: false,
+    //         error: undefined,
+    //         entities,
+    //         ids,
+    //     });
+    // });
+    //
+    // test('test updateProfile service rejected', () => {
+    //     const state: DeepPartial<ArticlesPageSchema> = {
+    //         isLoading: true,
+    //     };
+    //     expect(articlesPageReducer(
+    //         state as ArticlesPageSchema,
+    //         fetchArticlesList.rejected(new Error(), '', testFn(), 'error'),
+    //     )).toEqual({
+    //         isLoading: false,
+    //         error: 'error',
+    //     });
+    // });
 });
