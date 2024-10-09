@@ -9,7 +9,9 @@ export {
     ArticleBlockBase,
     ArticleCodeBLock,
     ArticleImageBLock,
-    ArticleTextBLock, ArticleType,
+    ArticleTextBLock,
+    ArticleType,
+    ArticleSortField,
 } from './model/types/article';
 
 export {
@@ -19,3 +21,5 @@ export {
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';

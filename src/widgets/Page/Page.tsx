@@ -24,7 +24,7 @@ export const Page = memo((props: PageProps) => {
         className,
         children,
         onScrollEnd,
-        isLoading,
+        isLoading = false,
     } = props;
 
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -39,6 +39,7 @@ export const Page = memo((props: PageProps) => {
         triggerRef,
         wrapperRef,
         callback: onScrollEnd,
+        isLoading,
     });
 
     useInitialEffect(() => {
@@ -50,7 +51,6 @@ export const Page = memo((props: PageProps) => {
             path: pathname,
             position: e.currentTarget.scrollTop,
         }));
-        console.log('scroll');
     }, 500);
 
     return (
@@ -60,7 +60,7 @@ export const Page = memo((props: PageProps) => {
             onScroll={onScroll}
         >
             {children}
-            {onScrollEnd ? (
+            {onScrollEnd && !isLoading ? (
                 <div ref={triggerRef} className={cls.trigger} />
             ) : null}
         </section>

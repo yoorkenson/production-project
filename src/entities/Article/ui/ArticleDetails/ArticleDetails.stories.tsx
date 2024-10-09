@@ -4,7 +4,7 @@ import { Article, ArticleBlockType, ArticleType } from 'entities/Article';
 import { ArticleDetails } from './ArticleDetails';
 
 const meta = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     parameters: {
         layout: 'fullscreen',
