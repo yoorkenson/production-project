@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Page } from './Page';
 
 const meta = {
@@ -17,6 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
-        children: '',
+        children: <div>test</div>,
     },
+    decorators: [StoreDecorator({})],
 };
