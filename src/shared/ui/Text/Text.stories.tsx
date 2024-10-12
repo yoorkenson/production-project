@@ -75,6 +75,14 @@ export const OnlyTextDark: Story = {
     ],
 };
 
+export const SizeS: Story = {
+    args: {
+        title: 'Title dis',
+        text: 'Text dis Text dis Text dis Text dis Text dis',
+        size: TextSize.S,
+    },
+};
+
 export const SizeM: Story = {
     args: {
         title: 'Title dis',
