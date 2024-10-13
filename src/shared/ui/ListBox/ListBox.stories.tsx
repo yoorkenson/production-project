@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { ListBox } from './ListBox';
 
 const items = [
@@ -9,7 +12,6 @@ const items = [
     {
         value: '2',
         content: 'asd',
-        disabled: true,
     },
     {
         value: '3',
@@ -26,6 +28,11 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {},
     args: {},
+    decorators: [
+        (Story) => (
+            <div style={{ padding: 100 }}><Story /></div>
+        ),
+    ],
 } satisfies Meta<typeof ListBox>;
 
 export default meta;
@@ -39,11 +46,38 @@ export const Normal: Story = {
     },
 };
 
-export const NormalTop: Story = {
+export const topLeft: Story = {
     args: {
         onChange: () => {},
         items,
         defaultValue: 'выберите',
-        direction: 'top',
+        direction: 'top left',
+    },
+};
+
+export const topRight: Story = {
+    args: {
+        onChange: () => {},
+        items,
+        defaultValue: 'выберите',
+        direction: 'top right',
+    },
+};
+
+export const bottomLeft: Story = {
+    args: {
+        onChange: () => {},
+        items,
+        defaultValue: 'выберите',
+        direction: 'bottom left',
+    },
+};
+
+export const bottomRight: Story = {
+    args: {
+        onChange: () => {},
+        items,
+        defaultValue: 'выберите',
+        direction: 'bottom right',
     },
 };
