@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
 import { Counter } from 'entities/Counter';
 import { Input } from 'shared/ui/Input/Input';
+import { Page } from 'widgets/Page/Page';
+import { HStack } from 'shared/ui/Stack';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 const MainPage = memo(() => {
     const { t } = useTranslation('main');
@@ -13,10 +16,11 @@ const MainPage = memo(() => {
     };
 
     return (
-        <div>
+        <Page>
             {t('Главная страница')}
             {/* <Counter /> */}
-        </div>
+
+        </Page>
     );
 });
 
