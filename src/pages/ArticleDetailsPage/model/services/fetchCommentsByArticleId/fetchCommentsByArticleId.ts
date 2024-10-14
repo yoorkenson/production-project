@@ -7,7 +7,7 @@ export const fetchCommentsByArticleId = createAsyncThunk<
     string | undefined,
     ThunkConfig<string>
 >(
-    'article/fetchCommentsByArticleId',
+    'articleDetails/fetchCommentsByArticleId',
     async (articleId, thunkAPI) => {
         const {
             extra,
@@ -19,7 +19,6 @@ export const fetchCommentsByArticleId = createAsyncThunk<
         }
 
         try {
-            // @ts-ignore
             const response = await extra.api.get<Comment[]>('/comments', {
                 params: {
                     articleId,

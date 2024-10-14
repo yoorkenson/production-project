@@ -21,23 +21,15 @@ const reducers: ReducersList = {
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
 
     if (!id) {
         return (
-            <VStack
-                gap="8"
-                max
-            >
-                <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                    {t('Статья не найдена')}
-                </Page>
-            </VStack>
-
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                {t('Статья не найдена')}
+            </Page>
         );
     }
 
@@ -50,10 +42,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
-
             </Page>
         </DynamicModuleLoader>
-
     );
 };
 

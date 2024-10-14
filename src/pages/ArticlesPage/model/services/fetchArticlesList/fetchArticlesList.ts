@@ -21,13 +21,8 @@ export const fetchArticlesList = createAsyncThunk<
     ThunkConfig<string>
 >(
     'articlesPage/fetchArticlesList',
-    async (props, thunkAPI) => {
-        const {
-            extra,
-            rejectWithValue,
-            getState,
-        } = thunkAPI;
-
+    async (props, thunkApi) => {
+        const { extra, rejectWithValue, getState } = thunkApi;
         const limit = getArticlesPageLimit(getState());
         const sort = getArticlesPageSort(getState());
         const order = getArticlesPageOrder(getState());
