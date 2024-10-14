@@ -5,8 +5,8 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManeger';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
 import { uiReducer } from 'features/UI/undex';
+import { rtkApi } from 'shared/api/rtkApi';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
@@ -18,6 +18,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         ui: uiReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -34,7 +35,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument: extraArg,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore

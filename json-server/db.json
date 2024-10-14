@@ -571,6 +571,12 @@
       "userId": "2",
       "text": "asdasd",
       "id": "5i52I5w"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "123123",
+      "id": "En82k3h"
     }
   ],
   "users": [
@@ -592,11 +598,11 @@
   "profile": [
     {
       "id": "1",
-      "first": "jgh",
-      "lastname": "asf",
+      "first": "gggggg",
+      "lastname": "asdafzx",
       "age": 465,
-      "currency": "RUB",
-      "country": "Belarus",
+      "currency": "USD",
+      "country": "Ukraine",
       "city": "Moscow",
       "username": "admin213",
       "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"

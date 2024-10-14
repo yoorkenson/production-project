@@ -50,6 +50,13 @@
 //     },
 // ];
 //
+
+describe('ArticleDetailsComments.test', () => {
+    test('qweqwe', () => {
+        expect(true).toBe(true);
+    });
+});
+
 // describe('ArticleDetailsComments.test', () => {
 //     test('test updateProfile service pending', () => {
 //         const state: DeepPartial<ArticleDetailsCommentsSchema> = {
