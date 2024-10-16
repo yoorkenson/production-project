@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 const meta = {
@@ -19,4 +20,7 @@ export const Normal: Story = {
     args: {
         id: '',
     },
+    decorators: [
+        StoreDecorator({}),
+    ],
 };

@@ -26,7 +26,7 @@ import { ArticleBLock, ArticleBlockType } from '../../model/types/article';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {

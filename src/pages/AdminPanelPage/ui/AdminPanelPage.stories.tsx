@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import MainPage from './MainPage';
+import AdminPanelPage from './AdminPanelPage';
 
 const meta = {
-    title: 'pages/MainPage',
-    component: MainPage,
+    title: 'pages/AdminPanelPage',
+    component: AdminPanelPage,
     parameters: {
         layout: 'fullscreen',
     },
@@ -15,7 +15,7 @@ const meta = {
     },
     args: {
     },
-} satisfies Meta<typeof MainPage>;
+} satisfies Meta<typeof AdminPanelPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
