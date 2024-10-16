@@ -1,18 +1,21 @@
-export { ArticleCodeBlockComponentProps } from './ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-export { ArticleImageBlockComponentProps } from './ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
-export { ArticleTextBlockComponentProps } from './ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
-export {
+export type { ArticleCodeBlockComponentProps } from './ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+export type { ArticleImageBlockComponentProps } from './ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+export type { ArticleTextBlockComponentProps } from './ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+export type {
     Article,
-    ArticleView,
     ArticleBLock,
-    ArticleBlockType,
     ArticleBlockBase,
     ArticleCodeBLock,
     ArticleImageBLock,
     ArticleTextBLock,
-    ArticleType,
-    ArticleSortField,
 } from './model/types/article';
+
+export {
+    ArticleType,
+    ArticleView,
+    ArticleSortField,
+    ArticleBlockType,
+} from './model/consts/consts';
 
 export {
     ArticleDetails,

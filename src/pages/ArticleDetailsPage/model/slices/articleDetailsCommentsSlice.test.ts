@@ -1,3 +1,4 @@
+import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 // import { Comment } from 'entities/Comment';
 // import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 // import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -52,6 +53,10 @@
 //
 
 describe('ArticleDetailsComments.test', () => {
+    const state: DeepPartial<ArticleDetailsCommentsSchema> = {
+        isLoading: false,
+        error: undefined,
+    };
     test('qweqwe', () => {
         expect(true).toBe(true);
     });
