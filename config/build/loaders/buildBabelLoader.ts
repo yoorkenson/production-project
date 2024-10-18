@@ -23,16 +23,16 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
                     ],
                     [
                         '@babel/plugin-transform-typescript',
-                        { isTsx },
+                        { isTSX: isTsx },
                     ],
                     '@babel/plugin-transform-runtime',
-                    isTsx && [
+                    isTsx && !isDev && [
                         babelRemovePropsPlugin,
                         {
                             props: ['data-testid'],
                         },
                     ],
-                ],
+                ].filter(Boolean),
             },
         },
     };
