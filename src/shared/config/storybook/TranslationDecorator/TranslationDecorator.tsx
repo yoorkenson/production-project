@@ -1,4 +1,4 @@
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 import { StoryFn } from '@storybook/react';
 import { I18nextProvider } from 'react-i18next';

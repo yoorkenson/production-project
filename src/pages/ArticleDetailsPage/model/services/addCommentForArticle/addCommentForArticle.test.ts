@@ -1,7 +1,7 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { getUserAuthData } from 'entities/User';
-import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { getUserAuthData } from '@/entities/User';
+import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { addCommentForArticle } from '../../services/addCommentForArticle/addCommentForArticle';
 
 const data = {
