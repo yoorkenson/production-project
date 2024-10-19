@@ -1,20 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NotificationList } from './NotificationList';
+import { Drawer } from './Drawer';
 
 const meta = {
-    title: 'entities/Notification/NotificationList',
-    component: NotificationList,
+    title: 'shared/Drawer',
+    component: Drawer,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {},
-} satisfies Meta<typeof NotificationList>;
+} satisfies Meta<typeof Drawer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {},
+    args: {
+        children: <div>chilrden</div>,
+    },
 };

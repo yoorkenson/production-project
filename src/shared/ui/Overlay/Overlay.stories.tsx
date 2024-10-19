@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NotificationList } from './NotificationList';
+import { Overlay } from './Overlay';
 
 const meta = {
-    title: 'entities/Notification/NotificationList',
-    component: NotificationList,
+    title: 'shared/Overlay',
+    component: Overlay,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {},
-} satisfies Meta<typeof NotificationList>;
+} satisfies Meta<typeof Overlay>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { notificationButton } from './NotificationButton';
+import { NotificationButton } from './NotificationButton';
 
 const meta = {
-    title: '_CHOOSE_/NotificationButton',
-    component: notificationButton,
+    title: 'features/NotificationButton',
+    component: NotificationButton,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {},
-} satisfies Meta<typeof notificationButton>;
+} satisfies Meta<typeof NotificationButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

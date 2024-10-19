@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { NotificationItem } from './NotificationItem';
 
 const meta = {
-    title: '_CHOOSE_/NotificationItem',
+    title: 'entities/Notification/NotificationItem',
     component: NotificationItem,
     parameters: {
         layout: 'fullscreen',
