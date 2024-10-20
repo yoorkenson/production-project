@@ -35,6 +35,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         target,
         virtualized = true,
     } = props;
+    console.log('props', props);
     const { t } = useTranslation();
 
     const isBig = view === ArticleView.BIG;

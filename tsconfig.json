@@ -7,7 +7,11 @@
         "noImplicitAny": true,
         "module": "ESNext",
         // В какую спецификацию компилируем: для поддержки большинства браузеров
-        "target": "es5",
+        // для webpack
+        // "target": "es5",
+
+        // для vite
+        "target": "esnext",
         "jsx": "react-jsx",
         // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
         "allowJs": true,
