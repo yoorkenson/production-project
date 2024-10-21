@@ -27,7 +27,18 @@ export default ({ config }: {config: webpack.Configuration}) => {
 
     config!.module!.rules.push({
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        // use: ['@svgr/webpack'],
+        use: {
+            loader: '@svgr/webpack',
+            options: {
+                svgoConfig: {
+                    plugins: [{
+                        name: 'removeViewBox',
+                        active: false,
+                    }],
+                },
+            },
+        },
     });
 
     config?.plugins?.push(new DefinePlugin({
