@@ -52,7 +52,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
         'node_modules',
     ];
 
-    config.resolve!.alias = { '@': paths.src };
+    config.resolve!.alias = {
+        ...config.resolve!.alias,
+        '@': paths.src,
+    };
 
     return config;
 };
