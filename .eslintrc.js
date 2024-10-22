@@ -53,7 +53,7 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
-        'right-path-fsd/path-checker': 'error',
+        'right-path-fsd/path-checker': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
