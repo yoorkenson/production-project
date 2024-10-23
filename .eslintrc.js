@@ -54,7 +54,13 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'right-path-fsd/path-checker': ['error', { alias: '@' }],
-        'right-path-fsd/public-api-imports': ['error', { alias: '@' }],
+        'right-path-fsd/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
