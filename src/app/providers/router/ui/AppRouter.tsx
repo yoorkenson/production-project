@@ -4,7 +4,7 @@ import React, {
 import { Route, Routes } from 'react-router-dom';
 import { PageLoader } from '@/widgets/PageLoader';
 import { RequireAuth } from './RequireAuth';
-import { routeConfig } from '@/app/providers/router/config/routeConfig';
+import { routeConfig } from '../config/routeConfig';
 import { AppRouteProps } from '@/shared/types/router';
 
 const AppRouter = () => {

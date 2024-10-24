@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatar from '@/shared/assets/tests/avatar.jpg';
 import { ProfileCard } from './ProfileCard';
 
 const meta = {
