@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import {
-    DetailedHTMLProps, HTMLAttributes, memo, ReactNode,
+    DetailedHTMLProps, HTMLAttributes, ReactNode,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';

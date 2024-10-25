@@ -1,5 +1,4 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { use } from 'i18next';
 import { getUserAuthData } from '@/entities/User';
 import MainIcon from '@/shared/assets/icons/main.svg';
 import AboutIcon from '@/shared/assets/icons/about.svg';
