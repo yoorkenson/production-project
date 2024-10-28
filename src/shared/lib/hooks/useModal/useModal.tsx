@@ -2,6 +2,13 @@ import {
     MutableRefObject, useCallback, useEffect, useRef, useState,
 } from 'react';
 
+/**
+ * Хук для модальных компонентов Drawer и Modal
+ * @param animationDelay
+ * @param isOpen
+ * @param onClose
+ */
+
 interface UseModalProps {
     isOpen?: boolean;
     onClose?: () => void;

@@ -88,7 +88,9 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {},
-    args: {},
+    args: {
+        virtualized: false,
+    },
 } satisfies Meta<typeof ArticleList>;
 
 export default meta;

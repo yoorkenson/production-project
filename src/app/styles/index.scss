@@ -9,10 +9,14 @@ body {
     color: var(--primary-color);
 }
 
-.app,
-.app_drawer {
+.app {
     min-height: 100vh;
     background: var(--bg-color);
+}
+
+.app_drawer {
+    min-height: 100vh;
+    background: transparent;
 }
 
 .content-page {
