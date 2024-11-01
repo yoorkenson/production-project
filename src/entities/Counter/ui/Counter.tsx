@@ -1,20 +1,32 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/Button';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '../model/slice/counterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterActions } from '../model/slice/counterSlice';
 
 export const Counter = () => {
     const dispatch = useDispatch();
-    const counterValue = useSelector(getCounterValue);
+    // const counterValue = useSelector(getCounterValue);
+    const counterValue = useCounterValue();
     const { t } = useTranslation();
+    const {
+        add,
+        increment,
+        decrement,
+    } = useCounterActions();
 
-    const increment = () => {
-        dispatch(counterActions.increment());
+    const handleInc = () => {
+        // dispatch(counterActions.increment());
+        increment();
     };
 
-    const decrement = () => {
-        dispatch(counterActions.decrement());
+    const handleDec = () => {
+        // dispatch(counterActions.decrement());
+        decrement();
+    };
+
+    const handleAddFive = () => {
+        add(5);
     };
 
     return (
@@ -23,16 +35,22 @@ export const Counter = () => {
                 {counterValue}
             </h1>
             <Button
-                onClick={increment}
+                onClick={handleInc}
                 data-testid="increment-btn"
             >
                 {t('increment')}
             </Button>
             <Button
-                onClick={decrement}
+                onClick={handleDec}
                 data-testid="decrement-btn"
             >
                 {t('decrement')}
+            </Button>
+            <Button
+                onClick={handleAddFive}
+                data-testid="decrement-btn"
+            >
+                {t('addFive')}
             </Button>
         </div>
     );
