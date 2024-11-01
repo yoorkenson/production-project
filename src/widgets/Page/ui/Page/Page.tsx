@@ -45,6 +45,7 @@ export const Page = memo((props: PageProps) => {
     });
 
     useInitialEffect(() => {
+        console.log('scrollPosition', scrollPosition);
         wrapperRef.current.scrollTop = scrollPosition;
     });
 

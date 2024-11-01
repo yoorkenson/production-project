@@ -1,24 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleType } from '../../model/consts/consts';
-import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { ArticleView } from '@/entities/Article';
+import { ArticleViewSelector } from './ArticleViewSelector';
 
 const meta = {
-    title: 'entities/Article/ArticleTypeTabs',
-    component: ArticleTypeTabs,
+    title: 'features/ArticleViewSelector',
+    component: ArticleViewSelector,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
     argTypes: {},
     args: {},
-} satisfies Meta<typeof ArticleTypeTabs>;
+} satisfies Meta<typeof ArticleViewSelector>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
-        onChangeType: () => {},
-        value: ArticleType.ALL,
+        view: ArticleView.BIG,
     },
 };
