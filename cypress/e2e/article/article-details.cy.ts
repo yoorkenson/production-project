@@ -8,6 +8,16 @@ describe('Пользователь заходит на страницу стат
             cy.visit(`articles/${article.id}`);
         });
     });
+
+    // describe('Работа с API', () => {
+    //  тут запросы на сервер
+    // })
+    // describe('Работа на фикстурах', () => {
+    //  тут работа со стабами (замоканные)
+    // })
+
+    describe('Пользователь заходит на страницу статьи');
+
     // создали статью - протестили все шо надо - удалили статью
     afterEach(() => {
         cy.removeArticle(currentArticleId);
@@ -25,6 +35,16 @@ describe('Пользователь заходит на страницу стат
         cy.getByTestId('CommentCard.Content').should('have.length', 1);
     });
     it('И ставит оценку', () => {
+        // мокаем запрос
+        cy.getByTestId('ArticleDetails.Info');
+        cy.getByTestId('RatingCard').scrollIntoView();
+        cy.setRate(5, 'feedback');
+        cy.get('[data-selected=true]').should('have.length', 5);
+    });
+
+    it('И ставит оценку (пример со стабом на фикстурах)', () => {
+        // мокаем запрос
+        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate(5, 'feedback');

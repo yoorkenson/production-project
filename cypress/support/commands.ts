@@ -12,4 +12,19 @@ Cypress.Commands.addAll(articleCommands);
 Cypress.Commands.addAll(commentsCommands);
 Cypress.Commands.addAll(ratingCommands);
 
+// перезаписываем команды
+// передаем флажок, после которого записываем фикстуру или читаем
+// если write, то получаем данные из запроса и записываем в файлик новосозданной фикстуры
+//
+// Cypress.Commands.overwrite('intercept', () => {
+//     const { FIXTURE_MODE } = process.env;
+//     const fixtureName = req.METHOD + req.url + hash(req.body);
+//     if (FIXTURE_MODE === 'READ') {
+//         readFixture(fixtureName)
+//     }
+//     if (FIXTURE_MODE === 'WRITE') {
+//         createFixture(fixtureName)
+//     }
+// });
+
 export {};
