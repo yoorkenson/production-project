@@ -32,9 +32,12 @@ const config: StorybookConfig = {
             },
         },
     }),
-    docs: {
-        autodocs: 'tag',
-    },
+
     // staticDirs: ['../../public'],
+    // docs: {}
+    typescript: {
+        check: true,
+        reactDocgen: 'react-docgen-typescript',
+    },
 };
 export default config;

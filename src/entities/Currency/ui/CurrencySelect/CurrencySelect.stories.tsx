@@ -11,6 +11,9 @@ const meta = {
     argTypes: {
     },
     args: {},
+    decorators: [
+        (Story) => <div style={{ padding: 200 }}><Story /></div>,
+    ],
 } satisfies Meta<typeof CurrencySelect>;
 
 export default meta;
