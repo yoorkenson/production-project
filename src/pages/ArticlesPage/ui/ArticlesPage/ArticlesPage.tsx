@@ -14,7 +14,10 @@ import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
-import { getArticlesPageIsLoading } from '../../model/selectors/articlesPageSelectors';
+import {
+    getArticlesPageIsLoading,
+    useArticleItemById,
+} from '../../model/selectors/articlesPageSelectors';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
@@ -32,6 +35,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticlesPageIsLoading);
     const [searchParams] = useSearchParams();
+    const articleItem = useArticleItemById('2');
+
+    console.log('articleItem', articleItem);
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
