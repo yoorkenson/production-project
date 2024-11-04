@@ -36,10 +36,8 @@ const meta = {
         ],
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
-    args: {
-    },
+    argTypes: {},
+    args: {},
 } satisfies Meta<typeof ArticleRecommendationsList>;
 
 export default meta;

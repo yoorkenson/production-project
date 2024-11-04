@@ -8,8 +8,7 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
     args: {},
 } satisfies Meta<typeof Select>;
 

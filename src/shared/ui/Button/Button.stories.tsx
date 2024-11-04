@@ -68,9 +68,7 @@ export const OutlineDark: Story = {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const BackgroundTheme: Story = {

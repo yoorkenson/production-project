@@ -56,10 +56,12 @@ describe('ArticleDetailsComments.test', () => {
             isLoading: false,
             error: undefined,
         };
-        expect(articleDetailsCommentsReducer(
-            state as ArticleDetailsCommentsSchema,
-            fetchCommentsByArticleId.pending,
-        )).toEqual({
+        expect(
+            articleDetailsCommentsReducer(
+                state as ArticleDetailsCommentsSchema,
+                fetchCommentsByArticleId.pending,
+            ),
+        ).toEqual({
             isLoading: true,
             error: undefined,
         });
@@ -70,10 +72,12 @@ describe('ArticleDetailsComments.test', () => {
             isLoading: true,
             error: undefined,
         };
-        expect(articleDetailsCommentsReducer(
-            state as ArticleDetailsCommentsSchema,
-            fetchCommentsByArticleId.fulfilled(comment, '', ''),
-        )).toEqual({
+        expect(
+            articleDetailsCommentsReducer(
+                state as ArticleDetailsCommentsSchema,
+                fetchCommentsByArticleId.fulfilled(comment, '', ''),
+            ),
+        ).toEqual({
             isLoading: false,
             error: undefined,
             entities,
@@ -85,10 +89,12 @@ describe('ArticleDetailsComments.test', () => {
         const state: DeepPartial<ArticleDetailsCommentsSchema> = {
             isLoading: true,
         };
-        expect(articleDetailsCommentsReducer(
-            state as ArticleDetailsCommentsSchema,
-            fetchCommentsByArticleId.rejected(new Error(), '', '', 'error'),
-        )).toEqual({
+        expect(
+            articleDetailsCommentsReducer(
+                state as ArticleDetailsCommentsSchema,
+                fetchCommentsByArticleId.rejected(new Error(), '', '', 'error'),
+            ),
+        ).toEqual({
             isLoading: false,
             error: 'error',
         });

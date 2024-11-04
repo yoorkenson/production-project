@@ -7,22 +7,25 @@ import cls from './ArticleImageBlockComponent.module.scss';
 
 export interface ArticleImageBlockComponentProps {
     className?: string;
-    block: ArticleImageBLock
+    block: ArticleImageBLock;
 }
 
-export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps) => {
-    const {
-        className,
-        block,
-    } = props;
-    const { t } = useTranslation();
+export const ArticleImageBlockComponent = memo(
+    (props: ArticleImageBlockComponentProps) => {
+        const { className, block } = props;
+        const { t } = useTranslation();
 
-    return (
-        <div className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
-            <img src={block.src} className={cls.title} alt={block.id} />
-            {block.title && (
-                <Text text={block.title} align={TextAlign.CENTER} />
-            )}
-        </div>
-    );
-});
+        return (
+            <div
+                className={classNames(cls.ArticleImageBlockComponent, {}, [
+                    className,
+                ])}
+            >
+                <img src={block.src} className={cls.title} alt={block.id} />
+                {block.title && (
+                    <Text text={block.title} align={TextAlign.CENTER} />
+                )}
+            </div>
+        );
+    },
+);

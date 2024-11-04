@@ -9,9 +9,7 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
     args: { onClick: fn() },
 } satisfies Meta<typeof Input>;
 

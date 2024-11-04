@@ -31,23 +31,19 @@ export const Primary: Story = {
             avatar: 'https://gotoparty.ru/public/img/upload/page/1231/2091608443221afd2c9db30f255c563a_200x200.jpg',
         },
     },
-    decorators: [
-
-    ],
+    decorators: [],
 };
 
 export const Loading: Story = {
     args: {
         isLoading: true,
     },
-    decorators: [
-    ],
+    decorators: [],
 };
 
 export const WithError: Story = {
     args: {
         error: 'error',
     },
-    decorators: [
-    ],
+    decorators: [],
 };

@@ -17,11 +17,13 @@ export {
     ArticleBlockType,
 } from './model/consts/consts';
 
-export {
-    ArticleDetails,
-} from './ui/ArticleDetails/ArticleDetails';
+export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleListItem } from './ui/ArticleListItem/ArticleListItem';
-export { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './model/selectors/articleDetails';
+export {
+    getArticleDetailsData,
+    getArticleDetailsError,
+    getArticleDetailsIsLoading,
+} from './model/selectors/articleDetails';

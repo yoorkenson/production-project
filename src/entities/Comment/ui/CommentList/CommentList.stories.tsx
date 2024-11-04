@@ -30,8 +30,7 @@ export const Normal: Story = {
             },
         ],
     },
-    decorators: [
-    ],
+    decorators: [],
 };
 
 export const Loading: Story = {
@@ -39,6 +38,5 @@ export const Loading: Story = {
         comments: [],
         isLoading: true,
     },
-    decorators: [
-    ],
+    decorators: [],
 };

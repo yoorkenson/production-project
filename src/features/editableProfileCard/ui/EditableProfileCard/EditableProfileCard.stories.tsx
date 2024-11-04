@@ -9,10 +9,8 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
-    args: {
-    },
+    argTypes: {},
+    args: {},
 } satisfies Meta<typeof EditableProfileCard>;
 
 export default meta;

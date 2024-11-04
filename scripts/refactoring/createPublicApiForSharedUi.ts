@@ -12,7 +12,15 @@ const sharedUiDirectory = project.getDirectory(uiPath);
 const componentsDirs = sharedUiDirectory?.getDirectories();
 
 function isAbsolute(value: string) {
-    const layers = ['app', 'processes', 'pages', 'widgets', 'features', 'entities', 'shared'];
+    const layers = [
+        'app',
+        'processes',
+        'pages',
+        'widgets',
+        'features',
+        'entities',
+        'shared',
+    ];
     return layers.some((layer) => value.startsWith(layer));
 }
 

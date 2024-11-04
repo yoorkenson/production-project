@@ -10,8 +10,7 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
     args: {
         to: '/',
     },
@@ -46,9 +45,7 @@ export const PrimaryDark: Story = {
         children: 'Text',
         theme: AppLinkTheme.PRIMARY,
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const SecondaryDark: Story = {
@@ -56,9 +53,7 @@ export const SecondaryDark: Story = {
         children: 'Text',
         theme: AppLinkTheme.SECONDARY,
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const RedDark: Story = {
@@ -66,7 +61,5 @@ export const RedDark: Story = {
         children: 'Text',
         theme: AppLinkTheme.RED,
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

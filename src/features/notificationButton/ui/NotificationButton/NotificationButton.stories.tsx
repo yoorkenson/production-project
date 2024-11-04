@@ -11,9 +11,7 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {},
     args: {},
-    decorators: [
-        StoreDecorator({}),
-    ],
+    decorators: [StoreDecorator({})],
 } satisfies Meta<typeof NotificationButton>;
 
 export default meta;

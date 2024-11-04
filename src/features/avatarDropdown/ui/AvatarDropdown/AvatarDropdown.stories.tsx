@@ -11,11 +11,12 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {},
-    args: {
-    },
+    args: {},
     decorators: [
         (Story) => (
-            <div style={{ width: 'fit-content', padding: 100 }}><Story /></div>
+            <div style={{ width: 'fit-content', padding: 100 }}>
+                <Story />
+            </div>
         ),
         StoreDecorator({
             user: {

@@ -11,28 +11,19 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
-    args: {
-    },
+    argTypes: {},
+    args: {},
 } satisfies Meta<typeof AboutPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {
-    },
-    decorators: [
-        StoreDecorator({}),
-    ],
+    args: {},
+    decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
-    args: {
-    },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        StoreDecorator({}),
-    ],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
 };

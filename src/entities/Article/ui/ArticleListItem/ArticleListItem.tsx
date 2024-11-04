@@ -24,12 +24,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const {
-        className,
-        view,
-        article,
-        target,
-    } = props;
+    const { className, view, article, target } = props;
     const { t } = useTranslation();
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
@@ -47,25 +42,42 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         return (
             <div
                 data-testid="ArticleListItem"
-                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+                className={classNames(cls.ArticleListItem, {}, [
+                    className,
+                    cls[view],
+                ])}
             >
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Text
+                            text={article.user.username}
+                            className={cls.username}
+                        />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <Text title={article.title} className={cls.title} />
                     {types}
                     <AppImage
                         fallback={<Skeleton width="100%" height={250} />}
-                        errorFallback={<div style={{ width: '100%', height: 250, background: 'grey' }} />}
+                        errorFallback={
+                            <div
+                                style={{
+                                    width: '100%',
+                                    height: 250,
+                                    background: 'grey',
+                                }}
+                            />
+                        }
                         src={article.img}
                         className={cls.img}
                         alt={article.title}
                     />
                     {textBlock && (
-                        <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+                        <ArticleTextBlockComponent
+                            block={textBlock}
+                            className={cls.textBlock}
+                        />
                     )}
                     <div className={cls.footer}>
                         <AppLink
@@ -89,13 +101,24 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             data-testid="ArticleListItem"
             target={target}
             to={getRouteArticleDetails(article.id)}
-            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            className={classNames(cls.ArticleListItem, {}, [
+                className,
+                cls[view],
+            ])}
         >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <AppImage
                         fallback={<Skeleton width={200} height={200} />}
-                        errorFallback={<div style={{ width: 200, height: 200, background: 'grey' }} />}
+                        errorFallback={
+                            <div
+                                style={{
+                                    width: 200,
+                                    height: 200,
+                                    background: 'grey',
+                                }}
+                            />
+                        }
                         src={article.img}
                         alt={article.title}
                         className={cls.img}

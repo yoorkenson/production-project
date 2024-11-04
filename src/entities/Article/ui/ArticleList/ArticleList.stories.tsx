@@ -15,9 +15,7 @@ const article = {
         username: 'user name',
         avatar: 'https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj',
     },
-    type: [
-        'IT',
-    ],
+    type: ['IT'],
     blocks: [
         {
             id: '1',
@@ -115,13 +113,10 @@ export const isLoadingSmall: Story = {
 export const ListBig: Story = {
     args: {
         isLoading: false,
-        articles:
-            new Array(3)
-                .fill(0)
-                .map((item, index) => ({
-                    ...article,
-                    id: String(index),
-                })),
+        articles: new Array(3).fill(0).map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
         view: ArticleView.BIG,
     },
 };
@@ -129,13 +124,10 @@ export const ListBig: Story = {
 export const ListSmall: Story = {
     args: {
         isLoading: false,
-        articles:
-            new Array(9)
-                .fill(0)
-                .map((item, index) => ({
-                    ...article,
-                    id: String(index),
-                })),
+        articles: new Array(9).fill(0).map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
         view: ArticleView.SMALL,
     },
 };

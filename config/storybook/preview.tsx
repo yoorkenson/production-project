@@ -19,7 +19,6 @@ const preview: Preview = {
         },
     },
     decorators: [
-
         withThemeByClassName({
             themes: {
                 light: `app ${Theme.LIGHT}`,
@@ -34,12 +33,8 @@ const preview: Preview = {
         // (Story) => (
         //     TranslationDecorator(Story)
         // ),
-        (Story) => (
-            SuspenseDecorator(Story)
-        ),
-        (Story) => (
-            RouterDecorator(Story)
-        ),
+        (Story) => SuspenseDecorator(Story),
+        (Story) => RouterDecorator(Story),
     ],
 };
 

@@ -20,9 +20,5 @@ export const Normal: Story = {
     args: {
         onSendComment: () => {},
     },
-    decorators: [
-        StoreDecorator({
-
-        }),
-    ],
+    decorators: [StoreDecorator({})],
 };

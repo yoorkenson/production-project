@@ -10,9 +10,7 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
     args: {
         isOpen: true,
     },
@@ -23,15 +21,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        children: 'asdsefhfgsf eshdfgaff sf d asdfg skdjghlkdfjhglkjsd hglkjshdfgflkhdglk shdfgjkhslkdfjgh slkdfkgjhsldkjffghl skdfjhgksdhfglkjsdhfgl ksjdhfglkajdhfgf alkdjfghaldkfjfgh alkjdfgh',
+        children:
+            'asdsefhfgsf eshdfgaff sf d asdfg skdjghlkdfjhglkjsd hglkjshdfgflkhdglk shdfgjkhslkdfjgh slkdfkgjhsldkjffghl skdfjhgksdhfglkjsdhfgl ksjdhfglkajdhfgf alkdjfghaldkfjfgh alkjdfgh',
     },
 };
 
 export const Dark: Story = {
     args: {
-        children: 'asdsefhfgsf eshdfgaff sf d asdfg skdjghlkdfjhglkjsd hglkjshdfgflkhdglk shdfgjkhslkdfjgh slkdfkgjhsldkjffghl skdfjhgksdhfglkjsdhfgl ksjdhfglkajdhfgf alkdjfghaldkfjfgh alkjdfgh',
+        children:
+            'asdsefhfgsf eshdfgaff sf d asdfg skdjghlkdfjhglkjsd hglkjshdfgflkhdglk shdfgjkhslkdfjgh slkdfkgjhsldkjffghl skdfjhgksdhfglkjsdhfgl ksjdhfglkajdhfgf alkdjfghaldkfjfgh alkjdfgh',
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

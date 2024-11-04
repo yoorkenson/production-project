@@ -10,7 +10,9 @@ import './shared/config/i18n/i18n';
 const container = document.getElementById('root');
 
 if (!container) {
-    throw new Error('Контейнер root не найден. не удалось вмонтировать приложение');
+    throw new Error(
+        'Контейнер root не найден. не удалось вмонтировать приложение',
+    );
 }
 const root = createRoot(container);
 

@@ -10,8 +10,7 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof ErrorPage>;
 
 export default meta;
@@ -23,7 +22,5 @@ export const Light: Story = {
 
 export const Dark: Story = {
     args: {},
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

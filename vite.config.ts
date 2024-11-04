@@ -4,7 +4,8 @@ import svgr from 'vite-plugin-svgr';
 import path from 'path';
 import fs from 'fs';
 
-const WRONG_CODE = 'import { bpfrpt_proptype_WindowScroller } from "../WindowScroller.js";';
+const WRONG_CODE =
+    'import { bpfrpt_proptype_WindowScroller } from "../WindowScroller.js";';
 export function reactVirtualized(): Plugin {
     return {
         name: 'flat:react-virtualized',
@@ -14,7 +15,13 @@ export function reactVirtualized(): Plugin {
                 .resolve('react-virtualized')
                 .replace(
                     path.join('dist', 'commonjs', 'index.js'),
-                    path.join('dist', 'es', 'WindowScroller', 'utils', 'onScroll.js'),
+                    path.join(
+                        'dist',
+                        'es',
+                        'WindowScroller',
+                        'utils',
+                        'onScroll.js',
+                    ),
                 );
             const code = fs.readFileSync(file, 'utf-8');
             const modified = code.replace(WRONG_CODE, '');
@@ -24,11 +31,7 @@ export function reactVirtualized(): Plugin {
 }
 
 export default defineConfig({
-    plugins: [
-        svgr({ exportAsDefault: true }),
-        react(),
-        reactVirtualized(),
-    ],
+    plugins: [svgr({ exportAsDefault: true }), react(), reactVirtualized()],
     css: {
         modules: {
             generateScopedName: '[path][name]__[local]--[hash:base64:5]',
@@ -43,7 +46,8 @@ export default defineConfig({
     resolve: {
         alias: [
             {
-                find: '@', replacement: '/src',
+                find: '@',
+                replacement: '/src',
             },
         ],
     },

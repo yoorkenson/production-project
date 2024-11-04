@@ -18,13 +18,16 @@ interface ArticleListProps {
     virtualized?: boolean;
 }
 
-const getSkeletons = (view: ArticleView) => (
+const getSkeletons = (view: ArticleView) =>
     new Array(view === ArticleView.SMALL ? 9 : 3)
         .fill(0)
         .map((item, index) => (
-            <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
-        ))
-);
+            <ArticleListItemSkeleton
+                className={cls.card}
+                key={index}
+                view={view}
+            />
+        ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
@@ -40,11 +43,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     const isBig = view === ArticleView.BIG;
     const itemsPerRow = isBig ? 1 : 3;
-    const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
+    const rowCount = isBig
+        ? articles.length
+        : Math.ceil(articles.length / itemsPerRow);
 
-    const rowRender = ({
-        index, key, style,
-    }: ListRowProps) => {
+    const rowRender = ({ index, key, style }: ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;
         const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
@@ -62,11 +65,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         }
 
         return (
-            <div
-                className={cls.row}
-                key={key}
-                style={style}
-            >
+            <div className={cls.row} key={key} style={style}>
                 {items}
             </div>
         );
@@ -74,7 +73,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         );
@@ -96,24 +100,26 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 <div
                     // @ts-ignore
                     ref={registerChild}
-                    className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                    className={classNames(cls.ArticleList, {}, [
+                        className,
+                        cls[view],
+                    ])}
                     data-testid="ArticleList"
                 >
-                    {virtualized
-                        ? (
-                            <List
-                                height={height ?? 700}
-                                rowCount={rowCount}
-                                rowHeight={isBig ? 700 : 330}
-                                rowRenderer={rowRender}
-                                width={width ? width - 80 : 700}
-                                autoHeight
-                                onScroll={onChildScroll}
-                                isScrolling={isScrolling}
-                                scrollTop={scrollTop}
-                            />
-                        )
-                        : (articles.map((item) => (
+                    {virtualized ? (
+                        <List
+                            height={height ?? 700}
+                            rowCount={rowCount}
+                            rowHeight={isBig ? 700 : 330}
+                            rowRenderer={rowRender}
+                            width={width ? width - 80 : 700}
+                            autoHeight
+                            onScroll={onChildScroll}
+                            isScrolling={isScrolling}
+                            scrollTop={scrollTop}
+                        />
+                    ) : (
+                        articles.map((item) => (
                             <ArticleListItem
                                 article={item}
                                 key={item.id}
@@ -122,7 +128,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                                 className={cls.card}
                             />
                         ))
-                        )}
+                    )}
 
                     {isLoading && getSkeletons(view)}
                 </div>

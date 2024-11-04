@@ -9,11 +9,7 @@ export const Counter = () => {
     // const counterValue = useSelector(getCounterValue);
     const counterValue = useCounterValue();
     const { t } = useTranslation();
-    const {
-        add,
-        increment,
-        decrement,
-    } = useCounterActions();
+    const { add, increment, decrement } = useCounterActions();
 
     const handleInc = () => {
         // dispatch(counterActions.increment());
@@ -31,25 +27,14 @@ export const Counter = () => {
 
     return (
         <div>
-            <h1 data-testid="value-title">
-                {counterValue}
-            </h1>
-            <Button
-                onClick={handleInc}
-                data-testid="increment-btn"
-            >
+            <h1 data-testid="value-title">{counterValue}</h1>
+            <Button onClick={handleInc} data-testid="increment-btn">
                 {t('increment')}
             </Button>
-            <Button
-                onClick={handleDec}
-                data-testid="decrement-btn"
-            >
+            <Button onClick={handleDec} data-testid="decrement-btn">
                 {t('decrement')}
             </Button>
-            <Button
-                onClick={handleAddFive}
-                data-testid="addFive-btn"
-            >
+            <Button onClick={handleAddFive} data-testid="addFive-btn">
                 {t('addFive')}
             </Button>
         </div>

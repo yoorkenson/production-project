@@ -10,10 +10,8 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-
-    },
-    args: { },
+    argTypes: {},
+    args: {},
 } satisfies Meta<typeof Text>;
 
 export default meta;
@@ -51,27 +49,21 @@ export const PrimaryDark: Story = {
         title: 'Title dis',
         text: 'Text dis Text dis Text dis Text dis Text dis',
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const OnlyTitleDark: Story = {
     args: {
         title: 'Title dis',
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const OnlyTextDark: Story = {
     args: {
         text: 'Text dis Text dis Text dis Text dis Text dis',
     },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const SizeS: Story = {

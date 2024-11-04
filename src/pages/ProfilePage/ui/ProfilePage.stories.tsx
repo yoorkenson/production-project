@@ -13,18 +13,15 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
-    args: {
-    },
+    argTypes: {},
+    args: {},
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {
-    },
+    args: {},
     decorators: [
         StoreDecorator({
             profile: {
@@ -43,8 +40,7 @@ export const Normal: Story = {
 };
 
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
     decorators: [
         ThemeDecorator(Theme.DARK),
         StoreDecorator({

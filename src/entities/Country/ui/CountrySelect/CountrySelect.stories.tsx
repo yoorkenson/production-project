@@ -8,11 +8,14 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
     args: {},
     decorators: [
-        (Story) => <div style={{ padding: 200 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 200 }}>
+                <Story />
+            </div>
+        ),
     ],
 } satisfies Meta<typeof CountrySelect>;
 
@@ -20,6 +23,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-    },
+    args: {},
 };

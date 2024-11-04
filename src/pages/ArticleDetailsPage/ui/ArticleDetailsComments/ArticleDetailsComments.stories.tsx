@@ -20,7 +20,5 @@ export const Normal: Story = {
     args: {
         id: '',
     },
-    decorators: [
-        StoreDecorator({}),
-    ],
+    decorators: [StoreDecorator({})],
 };

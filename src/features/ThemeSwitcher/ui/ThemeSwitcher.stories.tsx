@@ -10,24 +10,18 @@ const meta = {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
-    args: {
-    },
+    argTypes: {},
+    args: {},
 } satisfies Meta<typeof ThemeSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {
-    },
+    args: {},
 };
 
 export const Dark: Story = {
-    args: {
-    },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

@@ -9,9 +9,7 @@ const defaultArticle = {
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-        'SCIENCE',
-    ],
+    type: ['SCIENCE'],
     blocks: [],
 };
 
@@ -39,8 +37,8 @@ export const removeArticle = (articleId: string) => {
 declare global {
     namespace Cypress {
         interface Chainable {
-            createArticle(article?: Article): Chainable<Article>
-            removeArticle(articleId: string): Chainable<void>
+            createArticle(article?: Article): Chainable<Article>;
+            removeArticle(articleId: string): Chainable<void>;
         }
     }
 }
