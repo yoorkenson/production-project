@@ -12,11 +12,20 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: {
             loader: '@svgr/webpack',
             options: {
+                icon: true,
                 svgoConfig: {
-                    plugins: [{
-                        name: 'removeViewBox',
-                        active: false,
-                    }],
+                    plugins: [
+                        {
+                            name: 'removeViewBox',
+                            active: false,
+                        },
+                        {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true,
+                            }
+                        }
+                    ],
                 },
             },
         },
