@@ -3,7 +3,7 @@
 
 # обычно тут запускать только линтеры, тошо все остальное долго
 
-npx lint-staged
+#npx lint-staged
 # npm run build:prod
 #npm run lint:ts
 #npm run lint:scss

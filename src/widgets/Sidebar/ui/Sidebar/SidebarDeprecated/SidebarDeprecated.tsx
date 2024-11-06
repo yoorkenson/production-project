@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { VStack } from '@/shared/ui/Stack';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 
 import cls from '../Sidebar.module.scss';
 import { getSidebarItems } from '../../../model/selectors/getSidebarItems';
@@ -44,7 +44,7 @@ export const SidebarDeprecated = memo(({ className }: SidebarProps) => {
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
-                className={cls.collapseBtn}
+                className={cls.collapsedBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 size={ButtonSize.L}
                 square

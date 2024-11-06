@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getSidebarItems } from '../../../model/selectors/getSidebarItems';
 import cls from '../Sidebar.module.scss';
-import { AppLogo } from '@/shared/ui/AppLogo';
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 
 interface SidebarProps {
     className?: string;
