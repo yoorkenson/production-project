@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
@@ -14,10 +13,7 @@ import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
-import {
-    getArticlesPageIsLoading,
-    useArticleItemById,
-} from '../../model/selectors/articlesPageSelectors';
+import { getArticlesPageIsLoading } from '../../model/selectors/articlesPageSelectors';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
@@ -36,12 +32,9 @@ const reducers: ReducersList = {
 
 const ArticlesPage = (props: ArticlesPageProps) => {
     const { className } = props;
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticlesPageIsLoading);
     const [searchParams] = useSearchParams();
-    const articleItem = useArticleItemById('2');
-
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
