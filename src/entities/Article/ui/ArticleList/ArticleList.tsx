@@ -33,12 +33,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
         articles,
-        view = ArticleView.SMALL,
+        view = ArticleView.BIG,
         isLoading,
         target,
         virtualized = true,
     } = props;
-    console.log('props', props);
     const { t } = useTranslation();
 
     const isBig = view === ArticleView.BIG;
