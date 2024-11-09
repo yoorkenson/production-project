@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Country } from '../../model/types/country';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface CountrySelectProps {
     className?: string;
@@ -30,15 +32,21 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         [onChange],
     );
 
+    const listboxProps = {
+        readonly,
+        onChange: onChangeHandler,
+        value,
+        items: options,
+        defaultValue: t('Укажите страну'),
+        label: t('Укажите страну'),
+        direction: 'top right' as const,
+    };
+
     return (
-        <ListBox
-            readonly={readonly}
-            onChange={onChangeHandler}
-            value={value}
-            items={options}
-            defaultValue={t('Укажите страну')}
-            label={t('Укажите страну')}
-            direction="top right"
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ListBox {...listboxProps} />}
+            off={<ListBoxDeprecated {...listboxProps} />}
         />
     );
 });
