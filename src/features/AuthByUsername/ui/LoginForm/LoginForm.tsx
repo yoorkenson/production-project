@@ -2,9 +2,15 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import {
+    Button as ButtonDeprecated,
+    ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Button as ButtonRedesigned } from '@/shared/ui/redesigned/Button';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
+import { Input as InputRedesigned } from '@/shared/ui/redesigned/Input';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextRedesigned } from '@/shared/ui/redesigned/Text';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -17,6 +23,8 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 export interface LoginFormProps {
     className?: string;
@@ -59,38 +67,81 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-            <div className={classNames(cls.LoginForm, {}, [className])}>
-                <Text title={t('Форма авторизации')} />
-                {error && (
-                    <Text
-                        theme={TextTheme.ERROR}
-                        text={t('Вы ввели неверный логин или пароль')}
-                    />
-                )}
-                <Input
-                    autofocus
-                    type="text"
-                    className={cls.input}
-                    onChange={onChangeUsername}
-                    placeholder={t('Введите username')}
-                    value={username}
-                />
-                <Input
-                    type="text"
-                    className={cls.input}
-                    onChange={onChangePassword}
-                    placeholder={t('Введите пароль')}
-                    value={password}
-                />
-                <Button
-                    theme={ButtonTheme.OUTLINE}
-                    className={cls.loginBtn}
-                    onClick={onLoginClick}
-                    disabled={isLoading}
-                >
-                    {t('Войти')}
-                </Button>
-            </div>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <VStack
+                        max
+                        gap="16"
+                        className={classNames(cls.LoginForm, {}, [className])}
+                    >
+                        <TextRedesigned title={t('Форма авторизации')} />
+                        {error && (
+                            <TextRedesigned
+                                variant="error"
+                                text={t('Вы ввели неверный логин или пароль')}
+                            />
+                        )}
+                        <InputRedesigned
+                            autofocus
+                            type="text"
+                            className={cls.input}
+                            onChange={onChangeUsername}
+                            placeholder={t('Введите username')}
+                            value={username}
+                        />
+                        <InputRedesigned
+                            type="text"
+                            className={cls.input}
+                            onChange={onChangePassword}
+                            placeholder={t('Введите пароль')}
+                            value={password}
+                        />
+                        <ButtonRedesigned
+                            variant="outline"
+                            className={cls.loginBtn}
+                            onClick={onLoginClick}
+                            disabled={isLoading}
+                        >
+                            {t('Войти')}
+                        </ButtonRedesigned>
+                    </VStack>
+                }
+                off={
+                    <div className={classNames(cls.LoginForm, {}, [className])}>
+                        <TextDeprecated title={t('Форма авторизации')} />
+                        {error && (
+                            <TextDeprecated
+                                theme={TextTheme.ERROR}
+                                text={t('Вы ввели неверный логин или пароль')}
+                            />
+                        )}
+                        <InputDeprecated
+                            autofocus
+                            type="text"
+                            className={cls.input}
+                            onChange={onChangeUsername}
+                            placeholder={t('Введите username')}
+                            value={username}
+                        />
+                        <InputDeprecated
+                            type="text"
+                            className={cls.input}
+                            onChange={onChangePassword}
+                            placeholder={t('Введите пароль')}
+                            value={password}
+                        />
+                        <ButtonDeprecated
+                            theme={ButtonTheme.OUTLINE}
+                            className={cls.loginBtn}
+                            onClick={onLoginClick}
+                            disabled={isLoading}
+                        >
+                            {t('Войти')}
+                        </ButtonDeprecated>
+                    </div>
+                }
+            />
         </DynamicModuleLoader>
     );
 });

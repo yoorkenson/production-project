@@ -47,6 +47,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             <Card
                 padding="24"
                 max
+                border="partial"
                 data-testid="ArticleListItem"
                 className={classNames(cls.ArticleListItem, {}, [
                     className,
