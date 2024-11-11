@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleListItemDeprecated.module.scss';
+import cls from '../ArticleListItem.module.scss';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';

@@ -1,7 +1,7 @@
 .SMALL {
     .card {
         width: 240px;
-        height: 300px;
+        height: 350px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -40,16 +40,5 @@
     .textBlock {
         height: 72px;
         overflow: hidden;
-    }
-}
-
-.ArticleListRedesigned {
-    &.BIG {
-        width: 100%;
-    }
-
-    &.SMALL {
-        width: 240px;
-        height: 350px;
     }
 }

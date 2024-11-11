@@ -23,7 +23,6 @@
     .img {
         width: 100%;
         max-height: 250px;
-        height: 250px;
         object-fit: cover;
         margin: 16px 0;
     }
@@ -36,13 +35,12 @@
 
     .textBlock {
         max-height: 200px;
-        overflow: hidden;
+        overflow-y: hidden;
     }
 }
 
 .SMALL {
-    display: block;
-    width: 230px;
+    width: 240px;
     transition: 0.2s;
     cursor: pointer;
 
@@ -75,9 +73,9 @@
     }
 
     .infoWrapper {
-        margin-top: 8px;
         display: flex;
         align-items: center;
+        margin-top: 8px;
     }
 
     .types p {
@@ -101,5 +99,18 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+}
+
+.ArticleListItemRedesigned {
+    &.BIG {
+        width: 100%;
+    }
+
+    &.SMALL {
+        .card {
+            height: 350px;
+            width: 240px;
+        }
     }
 }
