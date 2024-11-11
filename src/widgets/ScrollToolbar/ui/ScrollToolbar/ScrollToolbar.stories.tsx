@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ScrollToolbar } from './ScrollToolbar';
 
 const meta = {
-    title: '_CHOOSE_/ScrollToolbar',
+    title: 'widgets/ScrollToolbar/ScrollToolbar',
     component: ScrollToolbar,
     parameters: {
         layout: 'fullscreen',

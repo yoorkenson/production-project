@@ -5,7 +5,7 @@ import { Button, ButtonSize, ButtonTheme } from './Button';
 import { Theme } from '@/shared/const/theme';
 
 const meta = {
-    title: 'shared/Button',
+    title: 'shared/deprecated/Button',
     component: Button,
     parameters: {
         layout: 'fullscreen',

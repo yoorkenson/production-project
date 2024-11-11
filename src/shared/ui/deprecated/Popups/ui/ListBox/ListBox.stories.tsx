@@ -17,7 +17,7 @@ const items = [
 ];
 
 const meta = {
-    title: 'shared/ListBox',
+    title: 'shared/deprecated/ListBox',
     component: ListBox,
     parameters: {
         layout: 'fullscreen',

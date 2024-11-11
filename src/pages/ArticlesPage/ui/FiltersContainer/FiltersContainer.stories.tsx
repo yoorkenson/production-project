@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { FiltersContainer } from './FiltersContainer';
 
 const meta = {
-    title: '_CHOOSE_/FiltersContainer',
+    title: 'pages/ArticlesPage/FiltersContainer',
     component: FiltersContainer,
     parameters: {
         layout: 'fullscreen',

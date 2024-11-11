@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AppImage } from './AppImage';
 
 const meta = {
-    title: '_CHOOSE_/AppImage',
+    title: 'shared/ui/AppImage',
     component: AppImage,
     parameters: {
         layout: 'fullscreen',

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AdditionalInfoContainer } from './AdditionalInfoContainer';
 
 const meta = {
-    title: '_CHOOSE_/AdditionalInfoContainer',
+    title: 'pages/ArticleDetailsPage/AdditionalInfoContainer',
     component: AdditionalInfoContainer,
     parameters: {
         layout: 'fullscreen',

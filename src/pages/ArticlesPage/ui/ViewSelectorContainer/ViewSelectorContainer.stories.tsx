@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ViewSelectorContainer } from './ViewSelectorContainer';
 
 const meta = {
-    title: '_CHOOSE_/ViewSelectorContainer',
+    title: 'pages/ArticlesPage/ViewSelectorContainer',
     component: ViewSelectorContainer,
     parameters: {
         layout: 'fullscreen',

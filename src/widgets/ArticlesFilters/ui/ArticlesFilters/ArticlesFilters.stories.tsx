@@ -4,7 +4,7 @@ import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { SortOrder } from '@/shared/types/sort';
 
 const meta = {
-    title: '_CHOOSE_/ArticlesFilters',
+    title: 'widgets/ArticlesFilters/ArticlesFilters',
     component: ArticlesFilters,
     parameters: {
         layout: 'fullscreen',

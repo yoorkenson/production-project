@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ScrollToTopButton } from './ScrollToTopButton';
 
 const meta = {
-    title: '_CHOOSE_/ScrollToTopButton',
+    title: 'features/ScrollToTopButton',
     component: ScrollToTopButton,
     parameters: {
         layout: 'fullscreen',

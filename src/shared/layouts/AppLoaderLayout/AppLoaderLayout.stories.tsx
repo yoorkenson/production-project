@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AppLoaderLayout } from './AppLoaderLayout';
 
 const meta = {
-    title: '_CHOOSE_/AppLoaderLayout',
+    title: 'shared/layouts/AppLoaderLayout',
     component: AppLoaderLayout,
     parameters: {
         layout: 'fullscreen',

@@ -3,7 +3,7 @@ import { Dropdown } from './Dropdown';
 import { Button } from '../../../Button/Button';
 
 const meta = {
-    title: 'shared/Dropdown',
+    title: 'shared/deprecated/Dropdown',
     component: Dropdown,
     parameters: {
         layout: 'fullscreen',
