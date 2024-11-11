@@ -17,6 +17,9 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { ArticleRating } from '@/features/articleRating';
 import { Card } from '@/shared/ui/deprecated/Card';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -35,37 +38,63 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         return null;
     }
 
-    return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page
-                className={classNames(cls.ArticleDetailsPage, {}, [className])}
-            >
-                <VStack gap="16" max>
-                    <ArticleDetailsPageHeader />
-                    <ArticleDetails id={id} />
-                    {/* npm run remove-feature isArticleRatingEnabled on */}
-                    {/* было
+    const ArticleDetailsPageDeprecated = (
+        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <VStack gap="16" max>
+                <ArticleDetailsPageHeader />
+                <ArticleDetails id={id} />
+                {/* npm run remove-feature isArticleRatingEnabled on */}
+                {/* было
                        <ToggleFeatures
                         feature="isArticleRatingEnabled"
                         on={<ArticleRating articleId={id} />}
                         off={<Card>{t('Оценка статей скоро появится')}</Card>}
                     />
                     */}
-                    {/* стало
+                {/* стало
                         <ArticleRating articleId={id} />
                     */}
-                    {/* стало после npm run remove-feature isArticleRatingEnabled off
+                {/* стало после npm run remove-feature isArticleRatingEnabled off
                         <Card>{t('Оценка статей скоро появится')}</Card>
                     */}
-                    <ToggleFeatures
-                        feature="isArticleRatingEnabled"
-                        on={<ArticleRating articleId={id} />}
-                        off={<Card>{t('Оценка статей скоро появится')}</Card>}
-                    />
-                    <ArticleRecommendationsList />
-                    <ArticleDetailsComments id={id} />
-                </VStack>
-            </Page>
+                <ToggleFeatures
+                    feature="isArticleRatingEnabled"
+                    on={<ArticleRating articleId={id} />}
+                    off={<Card>{t('Оценка статей скоро появится')}</Card>}
+                />
+                <ArticleRecommendationsList />
+                <ArticleDetailsComments id={id} />
+            </VStack>
+        </Page>
+    );
+
+    const ArticleDetailsPageRedesigned = (
+        <StickyContentLayout
+            content={
+                <Page
+                    className={classNames(cls.ArticleDetailsPage, {}, [
+                        className,
+                    ])}
+                >
+                    <VStack gap="16" max>
+                        <DetailsContainer />
+                        <ArticleRating articleId={id} />
+                        <ArticleRecommendationsList />
+                        <ArticleDetailsComments id={id} />
+                    </VStack>
+                </Page>
+            }
+            right={<AdditionalInfoContainer />}
+        />
+    );
+
+    return (
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={ArticleDetailsPageRedesigned}
+                off={ArticleDetailsPageDeprecated}
+            />
         </DynamicModuleLoader>
     );
 };
