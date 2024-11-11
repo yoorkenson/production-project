@@ -28,7 +28,7 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { renderArticleBlock } from './renderBlock';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 
@@ -39,6 +39,29 @@ interface ArticleDetailsProps {
 
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
+};
+
+const ArticleDetailsSkeleton = () => {
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => SkeletonRedesigned,
+        off: () => SkeletonDeprecated,
+    });
+
+    return (
+        <VStack gap="16" max>
+            <Skeleton
+                className={cls.avatar}
+                width={200}
+                height={200}
+                border="50%"
+            />
+            <Skeleton className={cls.title} width={300} height={32} />
+            <Skeleton className={cls.skeleton} width={600} height={24} />
+            <Skeleton className={cls.skeleton} width="100%" height={200} />
+            <Skeleton className={cls.skeleton} width="100%" height={200} />
+        </VStack>
+    );
 };
 
 const ArticleDetailsDeprecated = () => {
@@ -98,8 +121,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDetailsIsLoading);
-    // const isLoading = true;
-    const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
 
     useEffect(() => {
@@ -111,41 +132,23 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     let content;
 
     if (isLoading) {
-        content = (
-            <>
-                <SkeletonDeprecated
-                    className={cls.avatar}
-                    width={200}
-                    height={200}
-                    border="50%"
-                />
-                <SkeletonDeprecated
-                    className={cls.title}
-                    width={300}
-                    height={32}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width={600}
-                    height={24}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width="100%"
-                    height={200}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width="100%"
-                    height={200}
-                />
-            </>
-        );
+        content = <ArticleDetailsSkeleton />;
     } else if (error) {
         content = (
-            <TextDeprecated
-                align={TextAlign.CENTER}
-                text={t('Произошла ошибка при загрузке страницы')}
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <TextRedesigned
+                        align={TextAlign.CENTER}
+                        text={t('Произошла ошибка при загрузке страницы')}
+                    />
+                }
+                off={
+                    <TextDeprecated
+                        align={TextAlign.CENTER}
+                        text={t('Произошла ошибка при загрузке страницы')}
+                    />
+                }
             />
         );
     } else {

@@ -16,3 +16,22 @@
         cursor: auto;
     }
 }
+
+.StarRatingRedesigned {
+    .starIcon {
+        fill: none;
+        cursor: pointer;
+    }
+
+    .normal {
+        fill: none;
+    }
+
+    .hovered {
+        fill: var(--icon-redesigned);
+    }
+
+    .selected {
+        cursor: auto;
+    }
+}
