@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
-import { ArticleList } from '@/entities/Article';
+import { ArticleList, ArticleView } from '@/entities/Article';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
@@ -35,6 +35,7 @@ export const ArticleRecommendationsList = memo(
                     target="_blank"
                     articles={articles}
                     virtualized={false}
+                    view={ArticleView.SMALL}
                 />
             </VStack>
         );

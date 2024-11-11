@@ -141,7 +141,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <HStack
             wrap="wrap"
             gap="16"
-            className={classNames(cls.ArticleListRedesigned, {}, [])}
+            className={classNames(cls.ArticleListRedesigned, {}, [
+                className,
+                cls[view],
+            ])}
             data-testid="ArticleList"
         >
             {articles.map((item) => (
