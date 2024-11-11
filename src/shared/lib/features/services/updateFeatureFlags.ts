@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { updateFeatureFlagsMutation } from '../api/featureFlagsApi';
 import { FeatureFlags } from '@/shared/types/featureFlags';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { getAllFeatureFlags } from '../lib/setGetFeatures';
+import { getAllFeatureFlags, setFeatureFlags } from '../lib/setGetFeatures';
 
 interface UpdateFeatureFlagsOptions {
     userId: string;
@@ -16,21 +16,23 @@ export const updateFeatureFlag = createAsyncThunk<
 >('user/saveJsonSettings', async ({ userId, newFeatures }, thunkApi) => {
     const { rejectWithValue, dispatch } = thunkApi;
 
+    const allFeatures = {
+        ...getAllFeatureFlags(),
+        ...newFeatures,
+    };
+
     try {
         await dispatch(
             updateFeatureFlagsMutation({
                 userId,
-                features: {
-                    ...getAllFeatureFlags(),
-                    ...newFeatures,
-                },
+                features: allFeatures,
             }),
         );
 
-        // тошо локальный сервер и фичафлаги в рамках сессии не обновляются, поэтому делаем принудительно релоад
-        window.location.reload();
+        setFeatureFlags(allFeatures);
+        return undefined;
     } catch (e) {
         console.log(e);
-        rejectWithValue('Error');
+        return rejectWithValue('Error');
     }
 });
