@@ -21,12 +21,18 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     const { className, view, article, target } = props;
     const { t } = useTranslation();
 
-    const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
         <HStack gap="8">
             <Icon Svg={EyeIcon} />
             <Text text={String(article.views)} className={cls.views} />
         </HStack>
+    );
+
+    const userInfo = (
+        <>
+            <Avatar size={32} src={article.user.avatar} />
+            <Text bold text={article.user.username} />
+        </>
     );
 
     if (view === ArticleView.BIG) {
@@ -98,30 +104,35 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                 cls[view],
             ])}
         >
-            <Card className={cls.card}>
-                <div className={cls.imageWrapper}>
-                    <AppImage
-                        fallback={<Skeleton width={200} height={200} />}
-                        errorFallback={
-                            <div
-                                style={{
-                                    width: 200,
-                                    height: 200,
-                                    background: 'grey',
-                                }}
+            <Card className={cls.card} border="round">
+                <AppImage
+                    fallback={<Skeleton width="100%" height={200} />}
+                    errorFallback={
+                        <div
+                            style={{
+                                width: '100%',
+                                height: 200,
+                                background: 'grey',
+                            }}
+                        />
+                    }
+                    src={article.img}
+                    alt={article.title}
+                    className={cls.img}
+                />
+                <VStack gap="4" className={cls.info}>
+                    <Text text={article.title} className={cls.title} />
+                    <VStack gap="4" className={cls.footer} max>
+                        <HStack justify="between" max>
+                            <Text
+                                text={article.createdAt}
+                                className={cls.date}
                             />
-                        }
-                        src={article.img}
-                        alt={article.title}
-                        className={cls.img}
-                    />
-                    <Text text={article.createdAt} className={cls.date} />
-                </div>
-                <div className={cls.infoWrapper}>
-                    {types}
-                    {views}
-                </div>
-                <Text text={article.title} className={cls.title} />
+                            {views}
+                        </HStack>
+                        <HStack gap="4">{userInfo}</HStack>
+                    </VStack>
+                </VStack>
             </Card>
         </AppLink>
     );

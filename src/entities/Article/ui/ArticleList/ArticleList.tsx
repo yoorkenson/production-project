@@ -8,6 +8,8 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListProps {
     className?: string;
@@ -83,7 +85,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
-    return (
+    const ArticleListDeprecated = (
         <WindowScroller
             onScroll={() => console.log('scroll')}
             scrollElement={document.getElementById('PAGE_ID') as Element}
@@ -133,5 +135,34 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 </div>
             )}
         </WindowScroller>
+    );
+
+    const ArticleListRedesigned = (
+        <HStack
+            wrap="wrap"
+            gap="16"
+            className={classNames(cls.ArticleListRedesigned, {}, [])}
+            data-testid="ArticleList"
+        >
+            {articles.map((item) => (
+                <ArticleListItem
+                    article={item}
+                    key={item.id}
+                    view={view}
+                    target={target}
+                    className={cls.card}
+                />
+            ))}
+
+            {isLoading && getSkeletons(view)}
+        </HStack>
+    );
+
+    return (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={ArticleListRedesigned}
+            off={ArticleListDeprecated}
+        />
     );
 });
