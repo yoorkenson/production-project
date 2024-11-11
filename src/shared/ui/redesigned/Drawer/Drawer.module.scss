@@ -58,6 +58,18 @@
     padding: 15px;
 }
 
+.DrawerNew {
+    .sheet {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.DrawerOld {
+    .sheet {
+        background: var(--bg-color);
+    }
+}
+
 .isClosing {
     .content {
         transform: translateY(100%);

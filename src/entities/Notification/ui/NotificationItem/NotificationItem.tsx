@@ -24,7 +24,8 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
             feature="isAppRedesigned"
             on={
                 <Card
-                    variant="outlined"
+                    border="default"
+                    variant="normal"
                     className={classNames(cls.NotificationItem, {}, [
                         className,
                     ])}
