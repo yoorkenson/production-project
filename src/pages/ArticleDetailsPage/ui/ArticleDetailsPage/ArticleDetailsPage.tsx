@@ -38,7 +38,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         return null;
     }
 
-    const ArticleDetailsPageDeprecated = (
+    const ArticleDetailsPageDeprecated = () => (
         <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             <VStack gap="16" max>
                 <ArticleDetailsPageHeader />
@@ -68,7 +68,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         </Page>
     );
 
-    const ArticleDetailsPageRedesigned = (
+    const ArticleDetailsPageRedesigned = () => (
         <StickyContentLayout
             content={
                 <Page
@@ -92,8 +92,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <ToggleFeatures
                 feature="isAppRedesigned"
-                on={ArticleDetailsPageRedesigned}
-                off={ArticleDetailsPageDeprecated}
+                on={<ArticleDetailsPageRedesigned />}
+                off={<ArticleDetailsPageDeprecated />}
             />
         </DynamicModuleLoader>
     );

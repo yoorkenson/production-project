@@ -85,7 +85,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
-    const ArticleListDeprecated = (
+    const ArticleListDeprecated = () => (
         <WindowScroller
             onScroll={() => console.log('scroll')}
             scrollElement={document.getElementById('PAGE_ID') as Element}
@@ -137,7 +137,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         </WindowScroller>
     );
 
-    const ArticleListRedesigned = (
+    const ArticleListRedesigned = () => (
         <HStack
             wrap="wrap"
             gap="16"
@@ -164,8 +164,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <ToggleFeatures
             feature="isAppRedesigned"
-            on={ArticleListRedesigned}
-            off={ArticleListDeprecated}
+            on={<ArticleListRedesigned />}
+            off={<ArticleListDeprecated />}
         />
     );
 });
