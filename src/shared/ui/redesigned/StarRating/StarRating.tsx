@@ -1,10 +1,10 @@
 import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StarRating.module.scss';
-import { Icon as IconDeprecated } from '../Icon/Icon';
+import { Icon as IconDeprecated } from '../../deprecated/Icon/Icon';
 import StarIcon from '@/shared/assets/icons/star.svg';
 import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
-import { Icon as IconRedesigned } from '../../redesigned/Icon';
+import { Icon as IconRedesigned } from '../Icon';
 
 interface StarRatingProps {
     className?: string;
@@ -14,11 +14,6 @@ interface StarRatingProps {
 }
 
 const stars = [1, 2, 3, 4, 5];
-
-/**
- * устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 
 export const StarRating = memo((props: StarRatingProps) => {
     const { className, selectedStars = 0, onSelect, size = 30 } = props;
@@ -77,6 +72,7 @@ export const StarRating = memo((props: StarRatingProps) => {
                 };
                 return (
                     <ToggleFeatures
+                        key={commonProps.key}
                         feature="isAppRedesigned"
                         on={
                             <IconRedesigned

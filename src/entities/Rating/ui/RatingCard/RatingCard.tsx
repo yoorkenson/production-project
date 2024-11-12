@@ -7,7 +7,7 @@ import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Text as TextRedesigned } from '@/shared/ui/redesigned/Text';
-import { StarRating } from '@/shared/ui/deprecated/StarRating';
+import { StarRating } from '@/shared/ui/redesigned/StarRating';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { Input as InputRedesigned } from '@/shared/ui/redesigned/Input';

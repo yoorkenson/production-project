@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StarRating } from './StarRating';
 
 const meta = {
-    title: 'shared/deprecated/StarRating',
+    title: 'shared/redesigned/StarRating',
     component: StarRating,
     parameters: {
         layout: 'fullscreen',
